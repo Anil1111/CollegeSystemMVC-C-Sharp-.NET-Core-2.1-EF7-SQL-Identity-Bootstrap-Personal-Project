@@ -1,0 +1,67 @@
+﻿@*@model IEnumerable<CollegeSystemMVC.Models.User>*@
+@model SearchTerm
+
+@{
+    ViewData["Title"] = "Search User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search For a User</h2>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+
+
+<hr />
+<br />
+
+<div class="row">
+    <div style="margin: auto">
+        <form asp-action="SearchUserResults">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SearchName" class="control-label"></label>
+                <input asp-for="SearchName" class="form-control" />
+                <span asp-validation-for="SearchName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
